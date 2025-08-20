@@ -51,12 +51,8 @@ void	free_token_list(t_token *list)
 	{
 		tmp = list;
 		list = list->next;
-		if (tmp->value)
-			free(tmp->value);
-		tmp->value = NULL;
-		if (tmp)
-			free(tmp);
-		tmp = NULL;
+		free(tmp->value);
+		free(tmp);
 	}
 }
 

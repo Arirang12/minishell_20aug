@@ -113,6 +113,6 @@ t_token	*tokenize(const char *line, t_env *env)
 			return (NULL);
 	}
 	if (check_for_syntax_error(tokens))
-		return (NULL);
+		return (free_token_list(tokens), NULL);
 	return (tokens);
 }
